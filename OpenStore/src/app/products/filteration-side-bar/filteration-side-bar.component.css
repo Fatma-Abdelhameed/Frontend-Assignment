@@ -1,4 +1,16 @@
-.side-bar{
-    width: 33.333%;
-    background-color: #fff;
+.categories{
+    list-style: none;
+    margin-top: 12px;
+    line-height: 50px;
+}
+.categories li{
+    font-family: arial;
+    cursor: pointer;
+}
+.categories li:hover, .categories li:focus{
+    color: #8688c9;
+}
+.title{
+    color: #748cbc;
+    font-size: 20px;
 }

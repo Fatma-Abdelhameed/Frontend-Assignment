@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { CreateProductComponent } from './create-product/create-product.component';
@@ -8,12 +8,15 @@ import { FilterationSideBarComponent } from './filteration-side-bar/filteration-
 
 @NgModule({
   declarations: [
+    FilterationSideBarComponent,
     ProductsListComponent,
     CreateProductComponent,
-    FilterationSideBarComponent
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports:[
+    ProductsListComponent,
+    FilterationSideBarComponent]
 })
 export class ProductsModule { }

@@ -1,10 +1,17 @@
 .navbar{
+    position: sticky;
+    top: 0;
+    width: 100%;
     display: flex;
     align-items:center;
     margin: 0;
     padding: 12px;
     background-image: linear-gradient(to right, #1565c0 , #24c5dc);
     box-shadow: 0 0.45rem 1rem rgb(0 0 0 / 15%);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 1000;
 }
 .logo, .brand-name{
     color: #fff;
