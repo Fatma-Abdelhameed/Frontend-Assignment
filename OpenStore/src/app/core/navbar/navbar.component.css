@@ -1,0 +1,21 @@
+.navbar{
+    display: flex;
+    align-items:center;
+    margin: 0;
+    padding: 12px;
+    background-image: linear-gradient(to right, #1565c0 , #24c5dc);
+    box-shadow: 0 0.45rem 1rem rgb(0 0 0 / 15%);
+}
+.logo, .brand-name{
+    color: #fff;
+    
+}
+.brand-name{
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 12px;
+}
+.logo{
+    font-size: 25px;
+    margin-left: 5px;
+}
