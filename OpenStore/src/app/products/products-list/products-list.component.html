@@ -6,44 +6,13 @@
             <button class="products-sync-btn">Sync</button>
         </div>
         <div class="list-items">
-            <div class="item">
+            <div class="item" *ngFor="let item of filteration(productsList)">
                 <div class="item-header">
-                    
-                    <img src="https://www.kbctools.com/ecomm_images/items/large/1-820-460g.jpg" alt="item-image" class="item-image">
+                    <img [src]="item.imageUrl" alt="item-image" class="item-image">
                 </div>
                 <div class="item-body">
-                    <p class="item-title">Rotary Attachment</p>
-                    <p class="item-price">99$</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="item-header">
-                    <button class="item-sync-btn">Sync</button>
-                    <img src="https://www.kbctools.com/ecomm_images/items/large/1-820-460g.jpg" alt="item-image" class="item-image">
-                </div>
-                <div class="item-body">
-                    <p class="item-title">Rotary Attachment</p>
-                    <p class="item-price">99$</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="item-header">
-                    
-                    <img src="https://www.kbctools.com/ecomm_images/items/large/1-820-460g.jpg" alt="item-image" class="item-image">
-                </div>
-                <div class="item-body">
-                    <p class="item-title">Rotary Attachment</p>
-                    <p class="item-price">99$</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="item-header">
-                    
-                    <img src="https://www.kbctools.com/ecomm_images/items/large/1-820-460g.jpg" alt="item-image" class="item-image">
-                </div>
-                <div class="item-body">
-                    <p class="item-title">Rotary Attachment</p>
-                    <p class="item-price">99$</p>
+                    <p class="item-title">{{item.name}}</p>
+                    <p class="item-price">{{item.price | currency}}</p>
                 </div>
             </div>
         </div>
