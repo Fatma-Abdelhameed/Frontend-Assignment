@@ -1,2 +1,1 @@
-# Frontend-Assignment
-Lead Liaison
+# OpenStore Application Using Angular
