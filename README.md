@@ -13,4 +13,3 @@ so when refreshing the page the products list should be served from the cached d
 * HTML5
 * For Styling (only css)
 * Angular Framework
-
