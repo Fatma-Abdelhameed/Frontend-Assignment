@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <div class="item-body">
-                    <p class="item-title">{{item.name}}</p>
+                    <p class="item-title"><a [routerLink]="['/details/', item.id]">{{item.name}}</a></p>
                     <p class="item-price">{{item.price | currency}}</p>
                 </div>
             </div>

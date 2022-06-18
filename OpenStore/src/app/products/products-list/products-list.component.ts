@@ -35,7 +35,7 @@ export class ProductsListComponent implements OnInit {
     })
   }
   syncProduct(productId:number){ 
-    this.productService.getProductData(productId).subscribe((item)=>{
+    this.productService.getProduct(productId).subscribe((item)=>{
       this.productsList.map((l, index)=>{
         if(l.id == productId){
           this.productsList[index] = item

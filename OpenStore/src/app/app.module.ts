@@ -15,7 +15,7 @@ import { ProductsModule } from './products/products.module';
     CoreModule,
     ProductsModule,
     HttpClientModule
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

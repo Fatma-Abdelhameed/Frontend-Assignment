@@ -81,6 +81,9 @@
     padding: 10px;
     text-align: center;
 }
+.item-title a{
+    text-decoration: none;
+}
 .item-price{
     color:#a4bbd6
 }

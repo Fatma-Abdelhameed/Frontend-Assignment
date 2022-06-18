@@ -13,9 +13,9 @@ export class ProductService {
   complexProductsCount:number = 0
   constructor(public http:HttpClient) { }
   getAllProducts(){
-    return this.http.get<Product[]>("http://localhost:3000/products")
+    return this.http.get<Product[]>("https://captello.firebaseio.com/products.json")
   }
-  getProductData(currentProductId:number){
-    return this.http.get<Product>(`http://localhost:3000/products/${currentProductId}`)
+  getProduct(currentProductId:number){
+    return this.http.get<Product>(`https://captello.firebaseio.com/products/${currentProductId - 1}.json`)
   }
 }

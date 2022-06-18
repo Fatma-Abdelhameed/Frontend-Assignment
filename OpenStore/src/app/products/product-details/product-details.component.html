@@ -1,0 +1,13 @@
+<div class="item">
+    <div class="item-header">
+        <img [src]="productDetails.imageUrl" alt="item-image" class="item-image" *ngIf="productDetails.imageUrl in item ">
+        <div *ngIf="productDetails?.imageUrl == undefined" class="item-image-placeholder">
+            <i class="fas fa-image"></i>
+        </div>
+    </div>
+    <div class="item-body">
+        <p class="item-title">{{productDetails.name}}</p>
+        <p class="item-category">{{productDetails.category}} Category</p>
+        <p class="item-price">{{productDetails.price | currency}}</p>
+    </div>
+</div>

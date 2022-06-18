@@ -1,8 +1,9 @@
 import { NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductsListComponent } from './products-list/products-list.component';
-import { CreateProductComponent } from './create-product/create-product.component';
 import { FilterationSideBarComponent } from './filteration-side-bar/filteration-side-bar.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -10,10 +11,11 @@ import { FilterationSideBarComponent } from './filteration-side-bar/filteration-
   declarations: [
     FilterationSideBarComponent,
     ProductsListComponent,
-    CreateProductComponent,
+    ProductDetailsComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports:[
     ProductsListComponent,
