@@ -95,6 +95,7 @@
 }
 .item-title a{
     text-decoration: none;
+    color: rgb(48, 48, 48);
 }
 .item-price{
     color:#a4bbd6
