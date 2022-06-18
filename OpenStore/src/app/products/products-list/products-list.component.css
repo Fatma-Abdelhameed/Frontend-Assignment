@@ -51,6 +51,7 @@
 .item-header{
     position: relative;
     height: 150px;
+    background-color: #fff;
 }
 .item-sync-btn{
     position: absolute;

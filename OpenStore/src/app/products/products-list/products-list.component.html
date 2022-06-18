@@ -8,7 +8,8 @@
         <div class="list-items">
             <div class="item" *ngFor="let item of filteration(productsList)">
                 <div class="item-header">
-                    <img [src]="item.imageUrl" alt="item-image" class="item-image">
+                    <button class="item-sync-btn">Sync</button>
+                    <img [src]="item.imageUrl" alt="item-image" class="item-image" *ngIf="item.imageUrl != ' '">
                 </div>
                 <div class="item-body">
                     <p class="item-title">{{item.name}}</p>

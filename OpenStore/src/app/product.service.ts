@@ -15,4 +15,7 @@ export class ProductService {
   getAllProducts(){
     return this.http.get<Product[]>("http://localhost:3000/products")
   }
+  getProductData(){
+    
+  }
 }
