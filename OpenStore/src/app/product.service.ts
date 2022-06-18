@@ -7,15 +7,15 @@ import { map } from 'rxjs';
 })
 export class ProductService {
   products:Product[] = []
-  public currentState:string = 'all'
-  public productsCount:number = 0
-  public simpleProductsCount:number = 0
-  public complexProductsCount:number = 0
+  currentState:string = 'all'
+  productsCount:number = 0
+  simpleProductsCount:number = 0
+  complexProductsCount:number = 0
   constructor(public http:HttpClient) { }
   getAllProducts(){
     return this.http.get<Product[]>("http://localhost:3000/products")
   }
-  getProductData(){
-    
+  getProductData(currentProductId:number){
+    return this.http.get<Product>(`http://localhost:3000/products/${currentProductId}`)
   }
 }

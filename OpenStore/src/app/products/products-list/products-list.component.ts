@@ -12,6 +12,7 @@ import { ProductService } from 'src/app/product.service';
 export class ProductsListComponent implements OnInit {
   productsList:Product[] = []
   cacheKey = 'productsCashing'
+  product:Product = new Product(0, '', 0, '', '')
   getProducts(){
     this.productService.getAllProducts().subscribe((item)=>{
       localStorage[this.cacheKey] = JSON.stringify(item)
@@ -31,6 +32,15 @@ export class ProductsListComponent implements OnInit {
     this.productService.getAllProducts().subscribe((item)=>{
       this.productsList = item
       localStorage[this.cacheKey] = JSON.stringify(item)
+    })
+  }
+  syncProduct(productId:number){ 
+    this.productService.getProductData(productId).subscribe((item)=>{
+      this.productsList.map((l, index)=>{
+        if(l.id == productId){
+          this.productsList[index] = item
+        }
+      })
     })
   }
   filteration(list:Product[]){

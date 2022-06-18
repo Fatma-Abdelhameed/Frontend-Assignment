@@ -8,7 +8,7 @@
         <div class="list-items">
             <div class="item" *ngFor="let item of filteration(productsList)">
                 <div class="item-header">
-                    <button class="item-sync-btn">Sync</button>
+                    <button class="item-sync-btn" (click) = "syncProduct(item.id)">Sync</button>
                     <img [src]="item.imageUrl" alt="item-image" class="item-image" *ngIf="item.imageUrl in item ">
                     <div *ngIf="item?.imageUrl == undefined" class="item-image-placeholder">
                         <i class="fas fa-image"></i>
