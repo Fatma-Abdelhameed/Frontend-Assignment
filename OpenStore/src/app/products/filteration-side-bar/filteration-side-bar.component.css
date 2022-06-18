@@ -7,7 +7,7 @@
     font-family: arial;
     cursor: pointer;
 }
-.categories li:hover, .categories li:focus{
+.categories li:hover, .active{
     color: #8688c9;
 }
 .title{

@@ -1,8 +1,8 @@
 <aside>
     <ul class="categories">
         <li class="title">Products</li>
-        <li (click)="changeState('all')">All( {{allCounts}} )</li>
-        <li (click)="changeState('simple')">Simple Tools( {{simpleCounts}} )</li>
-        <li (click)="changeState('complex')">Complex Tools( {{complexCounts}} )</li>
+        <li (click)="changeState('all')" [ngClass]="{'active': this.productService.currentState == 'all'}">All( {{allCounts}} )</li>
+        <li (click)="changeState('simple')" [ngClass]="{'active': this.productService.currentState == 'simple'}">Simple Tools( {{simpleCounts}} )</li>
+        <li (click)="changeState('complex')" [ngClass]="{'active': this.productService.currentState == 'complex'}">Complex Tools( {{complexCounts}} )</li>
     </ul>
 </aside>
