@@ -12,8 +12,8 @@ import { ProductService } from 'src/app/product.service';
 export class ProductsListComponent implements OnInit {
   productsList:Product[] = []
   cacheKey = 'productsCashing'
-  constructor(public productService:ProductService) { 
-   this.productService.getAllProducts().subscribe((item)=>{
+  getProducts(){
+    this.productService.getAllProducts().subscribe((item)=>{
       localStorage[this.cacheKey] = JSON.stringify(item)
     })
   }
@@ -27,11 +27,17 @@ export class ProductsListComponent implements OnInit {
       return product.category == "complex"
     }).length
   }
-  ngOnInit(): void {
-    this.productsList = JSON.parse(localStorage[this.cacheKey])
-    this.productService.productsCount = this.productsList.length
-    this.getSimpleProductsCount()
-    this.getComplexProductsCount()
+  syncProducts(){
+    this.productService.getAllProducts().subscribe((item)=>{
+      this.productsList = item
+      localStorage[this.cacheKey] = JSON.stringify(item)
+    })
+    //this.getProducts()
+    /*this.productService.getAllProducts().subscribe((item)=>{
+      localStorage[this.cacheKey] = JSON.stringify(item)
+      this.productsList = item
+    })*/
+    //this.productsList = JSON.parse(localStorage[this.cacheKey])
   }
   filteration(list:Product[]){
     if(this.productService.currentState == "simple"){
@@ -45,5 +51,13 @@ export class ProductsListComponent implements OnInit {
     }
     return list
   }
-
+  ngOnInit(): void {
+    this.productsList = JSON.parse(localStorage[this.cacheKey])
+    this.productService.productsCount = this.productsList.length
+    this.getSimpleProductsCount()
+    this.getComplexProductsCount()
+  }
+  constructor(public productService:ProductService) { 
+    this.getProducts()
+  }
 }

@@ -3,7 +3,7 @@
     <div class="products-list">
         <div class="list-header">
             <h3>Products</h3>
-            <button class="products-sync-btn">Sync</button>
+            <button class="products-sync-btn" (click)="syncProducts()">Sync</button>
         </div>
         <div class="list-items">
             <div class="item" *ngFor="let item of filteration(productsList)">
