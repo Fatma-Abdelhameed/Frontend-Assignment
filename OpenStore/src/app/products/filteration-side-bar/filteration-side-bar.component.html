@@ -1,8 +1,8 @@
 <aside>
     <ul class="categories">
         <li class="title">Products</li>
-        <li (click)="changeState('all')">All( 11 )</li>
-        <li (click)="changeState('simple')">Simple Tools( 3 )</li>
-        <li (click)="changeState('complex')">Complex Tools( 5 )</li>
+        <li (click)="changeState('all')">All( {{allCounts}} )</li>
+        <li (click)="changeState('simple')">Simple Tools( {{simpleCounts}} )</li>
+        <li (click)="changeState('complex')">Complex Tools( {{complexCounts}} )</li>
     </ul>
 </aside>

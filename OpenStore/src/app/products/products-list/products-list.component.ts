@@ -11,12 +11,27 @@ import { ProductService } from 'src/app/product.service';
 })
 export class ProductsListComponent implements OnInit {
   productsList:Product[] = []
-  constructor(public productService:ProductService) { }
-
-  ngOnInit(): void {
-    this.productService.getAllProducts().subscribe((item)=>{
-      this.productsList = item
+  cacheKey = 'productsCashing'
+  constructor(public productService:ProductService) { 
+   this.productService.getAllProducts().subscribe((item)=>{
+      localStorage[this.cacheKey] = JSON.stringify(item)
     })
+  }
+  getSimpleProductsCount(){
+    this.productService.simpleProductsCount = this.productsList.filter((product)=>{
+      return product.category == "simple"
+    }).length
+  }
+  getComplexProductsCount(){
+    this.productService.complexProductsCount = this.productsList.filter((product)=>{
+      return product.category == "complex"
+    }).length
+  }
+  ngOnInit(): void {
+    this.productsList = JSON.parse(localStorage[this.cacheKey])
+    this.productService.productsCount = this.productsList.length
+    this.getSimpleProductsCount()
+    this.getComplexProductsCount()
   }
   filteration(list:Product[]){
     if(this.productService.currentState == "simple"){

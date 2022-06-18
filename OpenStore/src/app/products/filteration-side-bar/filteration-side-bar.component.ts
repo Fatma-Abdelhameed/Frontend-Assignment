@@ -10,9 +10,15 @@ import { ProductService } from 'src/app/product.service';
 })
 export class FilterationSideBarComponent implements OnInit {
 
+  allCounts:number = 0 
+  simpleCounts:number = 0
+  complexCounts:number = 0
   constructor(public productService:ProductService) { }
 
   ngOnInit(): void {
+    this.allCounts = this.productService.productsCount
+    this.simpleCounts = this.productService.simpleProductsCount
+    this.complexCounts = this.productService.complexProductsCount
   }
   changeState(state:string){
     this.productService.currentState = state
