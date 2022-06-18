@@ -28,15 +28,27 @@
     font-weight: normal;
     font-size: 25px;
 }
-.products-sync-btn{
-    background-color: #ffc400;
-    border: none;
-    color: #fff;
+.actions{
+    display: flex;
+}
+.products-sync-btn, .filter-categories{
     height: 30px;
     width: 115px;
-    box-shadow: 1px 1px 5px 0px #ffc400;
     align-self: center;
     cursor: pointer;
+    border: none;
+}
+.products-sync-btn{
+    background-color: #ffc400;
+    color: #fff;
+    box-shadow: 1px 1px 5px 0px #ffc400;
+}
+.filter-categories{
+    align-self: center;
+    margin-right: 5px;
+    outline: none;
+    padding: 0 5px;
+    display: none;
 }
 .list-items{
     display: grid;
@@ -122,6 +134,9 @@
     .list-items{
         grid-template-columns: auto auto;
     }
+    .filter-categories{
+        display: inline;
+    }
 }
 @media only screen and (max-width: 540px) {
     
@@ -133,5 +148,8 @@
     }
     .list-items{
         grid-template-columns: auto;
+    }
+    .filter-categories{
+        display: inline;
     }
 }

@@ -43,6 +43,9 @@ export class ProductsListComponent implements OnInit {
       })
     })
   }
+  changeState(state:string){
+    this.productService.currentState = state
+  }
   filteration(list:Product[]){
     if(this.productService.currentState == "simple"){
       list = this.productsList.filter(product=>{

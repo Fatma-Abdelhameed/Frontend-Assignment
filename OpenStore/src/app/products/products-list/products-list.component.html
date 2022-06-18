@@ -3,7 +3,14 @@
     <div class="products-list">
         <div class="list-header">
             <h3>Products</h3>
-            <button class="products-sync-btn" (click)="syncProducts()">Sync</button>
+            <div class="actions">
+                <select class="filter-categories" [(ngModel)]="this.productService.currentState">
+                    <option value="all">All</option>
+                    <option value="simple">Simple</option>
+                    <option value="complex">Complex</option>
+                </select>
+                <button class="products-sync-btn" (click)="syncProducts()">Sync</button>
+            </div>
         </div>
         <div class="list-items">
             <div class="item" *ngFor="let item of filteration(productsList)">
