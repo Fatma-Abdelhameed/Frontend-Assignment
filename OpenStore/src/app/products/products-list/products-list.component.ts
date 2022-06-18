@@ -32,12 +32,6 @@ export class ProductsListComponent implements OnInit {
       this.productsList = item
       localStorage[this.cacheKey] = JSON.stringify(item)
     })
-    //this.getProducts()
-    /*this.productService.getAllProducts().subscribe((item)=>{
-      localStorage[this.cacheKey] = JSON.stringify(item)
-      this.productsList = item
-    })*/
-    //this.productsList = JSON.parse(localStorage[this.cacheKey])
   }
   filteration(list:Product[]){
     if(this.productService.currentState == "simple"){
